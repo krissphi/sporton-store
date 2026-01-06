@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SportOn FE
+
+Learning project built as part of a course. This repository is intended for practice and experimentation while following the course materials.
+
+SportOn FE is a frontend landing page for a performance sportswear brand concept (“SportOn”). The app currently focuses on the **Landing Page** sections: Hero, Categories, and Products using the Next.js App Router.
+
+## Tech Stack
+
+- Next.js (App Router)
+- React + TypeScript
+- Tailwind CSS v4 (via PostCSS)
+- `next/font` (Google Font: Poppins)
+- `react-icons`
+- `react-toastify` (installed, not used in components yet)
+
+## Requirements
+
+- Node.js (LTS recommended)
+- Package manager: `pnpm` (this project includes `pnpm-lock.yaml`)
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open `http://localhost:3000`.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev     # run dev server
+pnpm build   # build production
+pnpm start   # run production server
+pnpm lint    # run eslint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `app/(landing)/layout.tsx` — Landing layout (Header + Footer) + metadata.
+- `app/(landing)/page.tsx` — Landing page (renders Hero/Categories/Products).
+- `app/(landing)/components/home/*` — Landing sections (hero, categories, products).
+- `app/(landing)/components/layouts/*` — Header & Footer.
+- `app/(landing)/components/ui/*` — UI primitives (e.g., Button).
+- `app/(dashboard)/` — Dashboard route group (currently empty).
+- `public/images/*` — Image assets (logo, hero, categories, products).
 
-## Deploy on Vercel
+## Styling & Conventions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Global styles live in `app/globals.css`.
+- Tailwind v4 is enabled via `@import "tailwindcss"`.
+- Theme tokens are defined through CSS variables (e.g., `--color-primary`, `--color-dark`).
+- Path alias is available: `@/*` (see `tsconfig.json`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+- Categories and products data are currently hard-coded in the components (no API integration yet).
