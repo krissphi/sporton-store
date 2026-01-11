@@ -16,11 +16,13 @@ const CartItems = () => {
     0
   );
 
-  const goToPayment = () => {};
+  const goToPayment = () => {
+    push("/payment/");
+  };
 
   return (
     <CardWithHeader title="Cart Items">
-      <div className="overflow-auto max-h-[300px]">
+      <div className="overflow-auto max-h-75">
         {cartList.map((cartItem, index) => (
           <div key={index} className="border-b border-gray-200 p-4 flex gap-3">
             <div className="bg-primary-light aspect-square w-16 flex justify-center items-center">
@@ -61,7 +63,7 @@ const CartItems = () => {
         <Button
           className="w-full mt-4"
           variant="dark"
-          onClick={() => push("/payment/")}
+          onClick={goToPayment}
         >
           <FiCreditCard /> Proceed to Payment
         </Button>

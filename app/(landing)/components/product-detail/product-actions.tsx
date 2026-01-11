@@ -14,7 +14,9 @@ const ProductActions = () => {
   const { push } = useRouter();
   const [qty, setQty] = useState(1);
 
-  const goToCheckout = () => {};
+  const goToCheckout = () => {
+    push("/checkout");
+  };
 
   return (
     <div className="flex gap-5">
@@ -40,11 +42,7 @@ const ProductActions = () => {
       <Button className="px-20 w-full">
         <FiShoppingBag size={24} /> Add to Cart
       </Button>
-      <Button
-        variant="dark"
-        className="px-20 w-full"
-        onClick={() => push("/checkout")}
-      >
+      <Button variant="dark" className="px-20 w-full" onClick={goToCheckout}>
         Checkout Now
         <FiArrowRight size={24} />
       </Button>

@@ -1,6 +1,6 @@
 import CardWithHeader from "../ui/card-with-header";
 
-const OrdrerInformation = () => {
+const OrderInformation = () => {
   return (
     <CardWithHeader title="Order Information">
       <div className="p-5">
@@ -25,4 +25,4 @@ const OrdrerInformation = () => {
   );
 };
 
-export default OrdrerInformation;
+export default OrderInformation;
