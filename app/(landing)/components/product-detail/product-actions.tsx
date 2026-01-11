@@ -14,8 +14,6 @@ const ProductActions = () => {
   const { push } = useRouter();
   const [qty, setQty] = useState(1);
 
-  const goToCheckout = () => {};
-
   return (
     <div className="flex gap-5">
       <div className="border border-gray-500 inline-flex w-fit min-w-20.5">

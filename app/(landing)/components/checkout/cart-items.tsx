@@ -16,8 +16,6 @@ const CartItems = () => {
     0
   );
 
-  const goToPayment = () => {};
-
   return (
     <CardWithHeader title="Cart Items">
       <div className="overflow-auto max-h-[300px]">

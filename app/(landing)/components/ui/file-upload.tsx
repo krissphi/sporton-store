@@ -35,7 +35,7 @@ const FileUpload = ({ onFileSelect }: TFileUploadProps) => {
       <input
         type="file"
         name=""
-        id=""
+        id="file-upload-input"
         className="hidden"
         ref={fileInputRef}
         accept="image/*"

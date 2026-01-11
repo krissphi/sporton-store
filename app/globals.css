@@ -32,6 +32,6 @@ html {
 }
 
 .input-group input,
-.input-group textarea{
+.input-group textarea {
   @apply px-4 py-2.5 bg-gray-100 w-full focus:border focus:border-gray-400;
 }

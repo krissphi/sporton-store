@@ -2,10 +2,10 @@ import PriceFormatter from "@/app/utils/price-formatter";
 import Image from "next/image";
 import ProductActions from "../../components/product-detail/product-actions";
 
-const ProducDetail = () => {
+const ProductDetail = () => {
   return (
     <main className="container mx-auto py-40 flex gap-12">
-      <div className="bg-primary-light aspect-square min-w-140 flex justify-center item-center">
+      <div className="bg-primary-light aspect-square min-w-140 flex justify-center items-center">
         <Image
           src="/images/products/product-4.png"
           width={550}
@@ -19,7 +19,7 @@ const ProducDetail = () => {
         <div className="bg-primary-light rounded-full text-primary py-2 px-6 mb-5 w-fit">
           Football
         </div>
-        <p className="loading-loose mb-8">
+        <p className="leading-loose mb-8">
           The SportsOn HyperSoccer v2 is engineered for the player who demands
           precision, power, and unrivaled speed on the pitch. Featuring a
           striking, two-toned black and white design with deep crimson accents,
@@ -36,4 +36,4 @@ const ProducDetail = () => {
   );
 };
 
-export default ProducDetail;
+export default ProductDetail;
