@@ -49,9 +49,9 @@ const HeroSection = () => {
       <Image
         src="/images/img-ornament-hero.svg"
         alt="shape decor"
-        width={420}
-        height={420}
-        className="absolute -right-50 top-1/2 -translate-y-1/2"
+        width={210}
+        height={210}
+        className="absolute right-0 top-1/2 -translate-y-1/2"
       />
     </section>
   );

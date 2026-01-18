@@ -13,11 +13,16 @@ const CartPopup = () => {
 
   const totalPrice = items.reduce(
     (total, item) => total + item.price * item.qty,
-    0
+    0,
   );
 
   const goToCheckout = () => {
-    push("/checkout");
+    if (items.length > 0) {
+      push("/checkout");
+      
+    } else {
+      alert("Your cart is empty.");
+    }
   };
 
   return (
