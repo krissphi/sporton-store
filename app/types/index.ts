@@ -1,3 +1,17 @@
+export interface LoginCredentials {
+  email: string;
+  password: string;
+}
+
+export interface LoginResponse {
+  token: string;
+  user: {
+    id: string
+    name: string;
+    email: string;
+  }
+}
+
 export interface Category {
   _id: string;
   name: string;
@@ -32,13 +46,13 @@ export interface Transaction {
   _id: string;
   paymentProof: string;
   status: "pending" | "paid" | "rejected";
-  purchasedItems: Array<{
-    productId: string;
+  purchasedItems: {
+    productId: Product;
     qty: number;
-  }>;
-  totalPayment: number;
+  }[];
+  totalPayment: string;
   customerName: string;
-  customerContact: string;
+  customerContact: number | null;
   customerAddress: string;
   createdAt: string;
   updatedAt: string;

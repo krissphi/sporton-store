@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 import "../globals.css";
+import AuthGuard from "./components/layouts/auth-guard";
 import "./components/layouts/sidebar";
 import Sidebar from "./components/layouts/sidebar";
 
@@ -26,8 +28,11 @@ export default function RootLayout({
         <div className="flex min-h-screen bg-white">
           <Sidebar />
           <main className="flex-1 ml-80 p-14 bg-[#F7F9FA] min-h-screen">
-            <div className="max-w-6xl mx-auto">{children}</div>
+            <div className="max-w-6xl mx-auto">
+              <AuthGuard>{children}</AuthGuard>
+            </div>
           </main>
+          <ToastContainer position="bottom-right" autoClose={3000} />
         </div>
       </body>
     </html>
