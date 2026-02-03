@@ -1,9 +1,9 @@
-import { getAllBank } from "@/app/services/bank.service";
+import { getAllBanks } from "@/app/services/bank.service";
 import { FiCreditCard } from "react-icons/fi";
 import CardWithHeader from "../ui/card-with-header";
 
 const PaymentOptions = async () => {
-  const banks = await getAllBank();
+  const banks = await getAllBanks();
 
   return (
     <CardWithHeader title="Payment Options">
