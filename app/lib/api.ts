@@ -2,20 +2,23 @@ export async function fetchAPI<T>(
   endpoint: string,
   options?: RequestInit,
 ): Promise<T> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${endpoint}`, {
+  const baseUrl = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/+$/, "");
+  const path = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
+  const res = await fetch(`${baseUrl}${path}`, {
     ...options,
     cache: options?.cache || "no-store",
   });
 
   if (!res.ok) {
-    let errorMessage = "Failed to fetch data from ${endpoint}";
+    let errorMessage = `Failed to fetch data from ${endpoint} (Status: ${res.status})`;
     try {
       const errorData = await res.json();
       errorMessage = errorData.message || errorData.error || errorMessage;
     } catch (e) {
-      console.log(e);
+      console.error("Error parsing API error response:", e);
     }
 
+    console.error(`API Error - ${endpoint}:`, errorMessage);
     throw new Error(errorMessage);
   }
 
